@@ -1,11 +1,14 @@
-var dbConnection = require("../infra/dbConnection");
+
 module.exports = (app) => {
   app.get("/produtos", (req,res) => {
-    var appMysql = require("mysql");
-    var conn = dbConnection();
-    conn.query("SELECT * FROM livros",function(err, resp){
+
+    var conn = app.infra.dbConnection();
+    var prodDB = app.infra.productsDB;
+
+    prodDB.list(conn,function(err, resp){
       res.render("product/list",{lista:resp});
     });
+
     conn.end();
   });
 }
