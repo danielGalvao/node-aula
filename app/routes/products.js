@@ -18,12 +18,12 @@ module.exports = (app) => {
   });
 
   // Salva livro
-  app.post("/products/save", (req,res) => {
+  app.post("/produtos", (req,res) => {
     var conn = app.infra.dbConnection();
     var prodDB = new app.infra.productsDB(conn);
-    var product = res.body;
+    var product = req.body;
     prodDB.save(product,(err,resp) => {
-      resp.redirect("/produtos");
+      res.redirect("/produtos");
     });
   });
 }
