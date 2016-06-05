@@ -5,7 +5,14 @@ module.exports = (app) => {
     var conn = app.infra.dbConnection();
     var prodDB = new app.infra.productsDB(conn);
     prodDB.list((err, resp) => {
-      res.render("product/list",{lista:resp});
+      res.format({
+        html: function(){
+          res.render("product/list",{lista:resp});
+        },
+        json: function(){
+          res.json(resp);
+        }
+      });
     });
     conn.end();
   }
