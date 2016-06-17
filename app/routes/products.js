@@ -7,10 +7,10 @@ module.exports = (app) => {
     prodDB.list((err, resp) => {
       res.format({
         html: function(){
-          res.render("product/list",{lista:resp});
+            res.render("product/list",{lista:resp});
         },
         json: function(){
-          res.json(resp);
+            res.json(resp);
         }
       });
     });
