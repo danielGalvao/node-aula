@@ -1,5 +1,14 @@
 <html>
 <body>
+  <div class="errors">
+    <%if(errorsValidate){%>
+      <ul>
+      <%for(var i=0;i<errorsValidate.legnth;i++){%>
+        <li><%=errorsValidate[i].param%> - <%=errorsValidate[i].msg%></li>
+      <%}%>
+      </ul>
+    <%}%>
+  </div>
   <form action="/produtos" method="post">
     <div>
       <label for="titulo">Titulo do livro</label>
