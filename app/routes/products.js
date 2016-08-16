@@ -21,7 +21,7 @@ module.exports = (app) => {
 
   // Cadastro
   app.get("/produtos/new", (req,res) => {
-    res.render("product/form",{errorsValidate:{}});
+    res.render("product/form",{errorsValidate:{},product:{}});
   });
 
   // Salva livro
@@ -30,7 +30,6 @@ module.exports = (app) => {
     var checkTitle = req.assert('titulo', "Titulo e obrigatorio").notEmpty();
     var checkPrice = req.assert('preco', "Formato invalido").isFloat();
     var errors = req.validationErrors();
-    console.log(errors);
     if(errors){
       res.render("product/form",{errorsValidate:errors});
       return;
