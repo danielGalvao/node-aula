@@ -1,5 +1,6 @@
 var http = require('http');
-describe("#ProdutosController",function(funcaoFinalizacao){
+var assert =require('assert');
+describe("#ProdutosController",function(done){
   it("#listagem JSON",function(){
     var configuracoes = {
         hostname: 'localhost',
@@ -10,13 +11,9 @@ describe("#ProdutosController",function(funcaoFinalizacao){
         }
     };
     http.get(configuracoes, function(res){
-      if(res.statusCode == 200){
-        console.log('Status OK');
-      }
-      if(res.headers['content-type'] == 'application/json;charset=utf-8'){
-        console.log('content-type OK');
-      }
-      funcaoFinalizacao();
+      assert.equal(res.statusCode);
+      assert.equal(res.headers['content-type'] == 'application/json;  charset=utf-8');
+      done();
     });
   });
 });
