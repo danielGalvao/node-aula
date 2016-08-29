@@ -31,7 +31,7 @@ module.exports = (app) => {
     var checkPrice = req.assert('preco', "Formato invalido").isFloat();
     var errors = req.validationErrors();
     if(errors){
-      res.render("product/form",{errorsValidate:errors});
+      res.render("product/form",{errorsValidate:errors,product:{}});
       return;
     }
 

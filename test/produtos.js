@@ -7,4 +7,10 @@ describe("#ProdutosController",function(done){
       .expect('Content-Type',/json/)
       .expect(22,done)
   });
+
+  it('#cadastro de novo produto com dados invalidos', function(done){
+    request.post('/produtos')
+      .send({titulo:"testasaass",preco:""})
+      .expect(302,done);
+  });
 });
