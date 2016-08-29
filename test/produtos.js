@@ -12,7 +12,7 @@ describe("#ProdutosController",function(done){
     };
     http.get(configuracoes, function(res){
       assert.equal(res.statusCode);
-      assert.equal(res.headers['content-type'] == 'application/json;  charset=utf-8');
+assert.equal(res.headers['content-type'] == 'application/json;  charset=utf-8');
       done();
     });
   });
