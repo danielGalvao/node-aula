@@ -1,5 +1,9 @@
 var app = require("./config/express")();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
-app.listen(3001,()=>{
+app.set('io',io);
+
+http.listen(3001,()=>{
   console.log("Servidor rodando");
 });
