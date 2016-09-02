@@ -3,7 +3,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.set('io',io);
-
-http.listen(3001,()=>{
-  console.log("Servidor rodando");
+var porta = process.env.PORT || 3000;
+http.listen(porta,()=>{
+  console.log("Servidor rodando no heroku");
 });
