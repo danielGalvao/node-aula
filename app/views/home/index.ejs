@@ -87,10 +87,7 @@
 <section id="index-section" class="container middle" ng-controller="HomeController">
 
     <ul id="home-highlight-collection">
-        <%
-        if(livros[0]){
-          for(i=0; i<3; i++) {
-        %>
+        <%for(i=0; i<3; i++) {%>
         <li class="col-left">
             <a href="linkDetalhe" class="block clearfix">
                 <img width="170" height="240" src="urlImagem" alt="<%=livros[i].titulo%>" title="<%=livros[i].titulo%>"/>
@@ -101,7 +98,6 @@
         </li>
         <%
         }
-      }
       %>
     </ul>
 
