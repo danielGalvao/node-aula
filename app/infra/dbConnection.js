@@ -4,10 +4,10 @@ var connectDB = function(){
   var grupos = urlDeConexao.match(/mysql:\/\/(.*):(.*)@(.*)\/(.*)?reconnect=true/);
   console.log(grupos);
   return appMysql.createConnection({
-    host     : grupos[3],
+    host     : "us-cdbr-iron-east-04.cleardb.net",
     user     : grupos[1],
     password : grupos[2],
-    database : grupos[4]
+    database : grupos[3]
   });
 }
 module.exports = function(){
