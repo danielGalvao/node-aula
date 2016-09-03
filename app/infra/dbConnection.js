@@ -2,6 +2,7 @@ var appMysql = require("mysql");
 var connectDB = function(){
   var urlDeConexao = process.env.CLEARDB_DATABASE_URL;
   var grupos = urlDeConexao.match(/mysql:\/\/(.*):(.*)@(.*)\/(.*)?reconnect=true/);
+  console.log(grupos);
   return appMysql.createConnection({
     host     : grupos[3],
     user     : grupos[1],
