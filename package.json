@@ -9,7 +9,9 @@
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-load": "^1.1.15",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "socket.io": "^1.4.8",
+    "supertest": "^2.0.0"
   },
   "devDependencies": {
     "express-validator": "^2.20.8",
