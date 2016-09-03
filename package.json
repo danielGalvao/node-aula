@@ -4,6 +4,7 @@
   "description": "Teste em node",
   "main": "produtos.js",
   "dependencies": {
+    "express-validator": "^2.20.8",
     "body-parser": "^1.15.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
